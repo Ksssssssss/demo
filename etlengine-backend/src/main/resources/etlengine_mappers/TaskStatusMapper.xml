@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hoolai.bi.etlengine.model.entity.TaskStatus" >
+  <resultMap id="BaseResultMap" type="com.hoolai.bi.etlengine.model.entity.TaskStatus" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="code" property="code" jdbcType="VARCHAR" />
+    <result column="runing_time" property="runingTime" jdbcType="TIMESTAMP" />
+    <result column="end_time" property="endTime" jdbcType="TIMESTAMP" />
+    <result column="continue_times" property="continueTimes" jdbcType="INTEGER" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="run_times" property="runTimes" jdbcType="INTEGER" />
+    <result column="curr_fail_times" property="currFailTimes" jdbcType="INTEGER" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, name, code, runing_time, end_time, continue_times, status, run_times, curr_fail_times, 
+    remark
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from task_status
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from task_status
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.hoolai.bi.etlengine.model.entity.TaskStatus" >
+    insert into task_status (id, name, code, 
+      runing_time, end_time, continue_times, 
+      status, run_times, curr_fail_times, 
+      remark)
+    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{code,jdbcType=VARCHAR}, 
+      #{runingTime,jdbcType=TIMESTAMP}, #{endTime,jdbcType=TIMESTAMP}, #{continueTimes,jdbcType=INTEGER}, 
+      #{status,jdbcType=INTEGER}, #{runTimes,jdbcType=INTEGER}, #{currFailTimes,jdbcType=INTEGER}, 
+      #{remark,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.hoolai.bi.etlengine.model.entity.TaskStatus" >
+    insert into task_status
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="code != null" >
+        code,
+      </if>
+      <if test="runingTime != null" >
+        runing_time,
+      </if>
+      <if test="endTime != null" >
+        end_time,
+      </if>
+      <if test="continueTimes != null" >
+        continue_times,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="runTimes != null" >
+        run_times,
+      </if>
+      <if test="currFailTimes != null" >
+        curr_fail_times,
+      </if>
+      <if test="remark != null" >
+        remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="code != null" >
+        #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="runingTime != null" >
+        #{runingTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endTime != null" >
+        #{endTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="continueTimes != null" >
+        #{continueTimes,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="runTimes != null" >
+        #{runTimes,jdbcType=INTEGER},
+      </if>
+      <if test="currFailTimes != null" >
+        #{currFailTimes,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.hoolai.bi.etlengine.model.entity.TaskStatus" >
+    update task_status
+    <set >
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="code != null" >
+        code = #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="runingTime != null" >
+        runing_time = #{runingTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endTime != null" >
+        end_time = #{endTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="continueTimes != null" >
+        continue_times = #{continueTimes,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="runTimes != null" >
+        run_times = #{runTimes,jdbcType=INTEGER},
+      </if>
+      <if test="currFailTimes != null" >
+        curr_fail_times = #{currFailTimes,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.hoolai.bi.etlengine.model.entity.TaskStatus" >
+    update task_status
+    set name = #{name,jdbcType=VARCHAR},
+      code = #{code,jdbcType=VARCHAR},
+      runing_time = #{runingTime,jdbcType=TIMESTAMP},
+      end_time = #{endTime,jdbcType=TIMESTAMP},
+      continue_times = #{continueTimes,jdbcType=INTEGER},
+      status = #{status,jdbcType=INTEGER},
+      run_times = #{runTimes,jdbcType=INTEGER},
+      curr_fail_times = #{currFailTimes,jdbcType=INTEGER},
+      remark = #{remark,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  
+  <sql id="Vo_Where_Clause">
+      <where>
+			<if test="entity!=null">
+				<if test="entity.id != null ">
+					 <![CDATA[ and id = #{entity.id} ]]>
+				</if>
+				<if test="entity.name != null and entity.name != ''">
+					 <![CDATA[ and name = #{entity.name} ]]>
+				</if>
+				<if test="entity.code != null and entity.code != ''">
+					 <![CDATA[ and code = #{entity.code} ]]>
+				</if>
+				<if test="entity.status != null">
+					 <![CDATA[ and status = #{entity.status} ]]>
+				</if>
+			</if>
+		</where>
+	</sql>
+  
+  <select id="selectOne" parameterType="com.hoolai.bi.etlengine.vo.TaskStatusVO" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from task_status
+		<if test="_parameter != null">
+			<include refid="Vo_Where_Clause" />
+		</if>
+		 <![CDATA[ limit 0, 1 ]]>
+	</select>
+  
+  <select id="selectMatchList" parameterType="com.hoolai.bi.etlengine.vo.TaskStatusVO" resultMap="BaseResultMap">
+     select 
+     <include refid="Base_Column_List" />
+     from task_status
+     <if test="_parameter != null">
+			<include refid="Vo_Where_Clause" />
+	 </if>
+  </select>
+  
+  <select id="selectList" parameterType="com.hoolai.bi.etlengine.vo.TaskStatusVO" resultMap="BaseResultMap">
+		select
+		  <include refid="Base_Column_List" />
+		  from task_status
+		<if test="_parameter != null">
+			<include refid="Vo_Where_Clause" />
+		</if>
+		<![CDATA[ order by id asc limit #{offset}, #{rows} ]]>
+	</select>
+	
+	<select id="selectCount" parameterType="com.hoolai.bi.etlengine.vo.TaskStatusVO" resultType="java.lang.Long">
+		select 
+		  count(*)
+		  from task_status u
+		<if test="_parameter != null">
+			<include refid="Vo_Where_Clause" />
+		</if>
+	</select>
+</mapper>

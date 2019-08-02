@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hoolai.bi.etlengine.model.entity.EngineEtls" >
+  <resultMap id="BaseResultMap" type="com.hoolai.bi.etlengine.model.entity.EngineEtls" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="type" property="type" jdbcType="VARCHAR" />
+    <result column="level" property="level" jdbcType="INTEGER" />
+    <result column="title" property="title" jdbcType="VARCHAR" />
+    <result column="equip_mark" property="equipMark" jdbcType="VARCHAR"></result>
+    <result column="added_at" property="addedAt" jdbcType="TIMESTAMP" />
+    <result column="modify_at" property="modifyAt" jdbcType="TIMESTAMP" />
+    <result column="terminal_type" property="terminalType" jdbcType="INTEGER" />
+    <result column="system_type" property="systemType" jdbcType="INTEGER" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.hoolai.bi.etlengine.model.entity.EngineEtls" extends="BaseResultMap" >
+    <result column="description" property="description" jdbcType="LONGVARCHAR" />
+    <result column="template" property="template" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, type, level,equip_mark, title, added_at, modify_at,terminal_type,system_type 
+  </sql>
+  <sql id="Blob_Column_List" >
+    description, template
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from engine_etls
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from engine_etls
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.hoolai.bi.etlengine.model.entity.EngineEtls" >
+    insert into engine_etls (id, type, level, 
+      title, added_at, modify_at, 
+      description, template)
+    values (#{id,jdbcType=INTEGER}, #{type,jdbcType=VARCHAR}, #{level,jdbcType=INTEGER}, 
+      #{title,jdbcType=VARCHAR}, #{addedAt,jdbcType=TIMESTAMP}, #{modifyAt,jdbcType=TIMESTAMP}, 
+      #{description,jdbcType=LONGVARCHAR}, #{template,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.hoolai.bi.etlengine.model.entity.EngineEtls" >
+    insert into engine_etls
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="type != null" >
+        type,
+      </if>
+      <if test="level != null" >
+        level,
+      </if>
+      <if test="title != null" >
+        title,
+      </if>
+      <if test="addedAt != null" >
+        added_at,
+      </if>
+      <if test="modifyAt != null" >
+        modify_at,
+      </if>
+      <if test="description != null" >
+        description,
+      </if>
+      <if test="template != null" >
+        template,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="level != null" >
+        #{level,jdbcType=INTEGER},
+      </if>
+      <if test="title != null" >
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="addedAt != null" >
+        #{addedAt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyAt != null" >
+        #{modifyAt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="description != null" >
+        #{description,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="template != null" >
+        #{template,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.hoolai.bi.etlengine.model.entity.EngineEtls" >
+    update engine_etls
+    <set >
+      <if test="type != null" >
+        type = #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="level != null" >
+        level = #{level,jdbcType=INTEGER},
+      </if>
+      <if test="title != null" >
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="addedAt != null" >
+        added_at = #{addedAt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyAt != null" >
+        modify_at = #{modifyAt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="description != null" >
+        description = #{description,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="template != null" >
+        template = #{template,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.hoolai.bi.etlengine.model.entity.EngineEtls" >
+    update engine_etls
+    set type = #{type,jdbcType=VARCHAR},
+      level = #{level,jdbcType=INTEGER},
+      title = #{title,jdbcType=VARCHAR},
+      added_at = #{addedAt,jdbcType=TIMESTAMP},
+      modify_at = #{modifyAt,jdbcType=TIMESTAMP},
+      description = #{description,jdbcType=LONGVARCHAR},
+      template = #{template,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.hoolai.bi.etlengine.model.entity.EngineEtls" >
+    update engine_etls
+    set type = #{type,jdbcType=VARCHAR},
+      level = #{level,jdbcType=INTEGER},
+      title = #{title,jdbcType=VARCHAR},
+      added_at = #{addedAt,jdbcType=TIMESTAMP},
+      modify_at = #{modifyAt,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <sql id="Vo_Where_Clause">
+		<where>
+			<if test="entity!=null">
+				<if test="entity.id != null ">
+					 <![CDATA[ and id = #{entity.id} ]]>
+				</if>
+				<if test="entity.type != null ">
+					 <![CDATA[ and type = #{entity.type} ]]>
+				</if>
+				<if test="entity.level != null ">
+					 <![CDATA[ and level = #{entity.level} ]]>
+				</if>
+				<if test="entity.terminalType != null ">
+					 <![CDATA[ and terminal_type = #{entity.terminalType} ]]>
+				</if>
+				<if test="entity.systemType != null ">
+					 <![CDATA[ and system_type = #{entity.systemType} ]]>
+				</if>
+			</if>
+		</where>
+	</sql>
+  
+  <select id="selectMatchList" parameterType="com.hoolai.bi.etlengine.vo.EngineEtlsVO" resultMap="ResultMapWithBLOBs">
+     select 
+     <include refid="Base_Column_List" />,
+      <include refid="Blob_Column_List" />
+     from engine_etls
+     <if test="_parameter != null">
+			<include refid="Vo_Where_Clause" />
+		</if>
+  </select>
+</mapper>

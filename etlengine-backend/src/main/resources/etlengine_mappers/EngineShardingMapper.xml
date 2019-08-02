@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hoolai.bi.etlengine.model.entity.EngineSharding" >
+  <resultMap id="BaseResultMap" type="com.hoolai.bi.etlengine.model.entity.EngineSharding" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="num" property="num" jdbcType="INTEGER" />
+    <result column="added_at" property="addedAt" jdbcType="TIMESTAMP" />
+    <result column="modify_at" property="modifyAt" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, num, added_at, modify_at
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from engine_sharding
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from engine_sharding
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.hoolai.bi.etlengine.model.entity.EngineSharding" >
+    insert into engine_sharding (id, num, added_at, 
+      modify_at)
+    values (#{id,jdbcType=INTEGER}, #{num,jdbcType=INTEGER}, #{addedAt,jdbcType=TIMESTAMP}, 
+      #{modifyAt,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.hoolai.bi.etlengine.model.entity.EngineSharding" >
+    insert into engine_sharding
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="num != null" >
+        num,
+      </if>
+      <if test="addedAt != null" >
+        added_at,
+      </if>
+      <if test="modifyAt != null" >
+        modify_at,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="num != null" >
+        #{num,jdbcType=INTEGER},
+      </if>
+      <if test="addedAt != null" >
+        #{addedAt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyAt != null" >
+        #{modifyAt,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.hoolai.bi.etlengine.model.entity.EngineSharding" >
+    update engine_sharding
+    <set >
+      <if test="num != null" >
+        num = #{num,jdbcType=INTEGER},
+      </if>
+      <if test="addedAt != null" >
+        added_at = #{addedAt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyAt != null" >
+        modify_at = #{modifyAt,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.hoolai.bi.etlengine.model.entity.EngineSharding" >
+    update engine_sharding
+    set num = #{num,jdbcType=INTEGER},
+      added_at = #{addedAt,jdbcType=TIMESTAMP},
+      modify_at = #{modifyAt,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  
+  <sql id="Vo_Where_Clause">
+		<where>
+			<if test="entity!=null">
+				<if test="entity.id != null ">
+					 <![CDATA[ and id = #{entity.id} ]]>
+				</if>
+			</if>
+		</where>
+	</sql>
+  
+  <select id="selectMatchList" parameterType="com.hoolai.bi.etlengine.vo.EngineShardingVO" resultMap="BaseResultMap">
+     select 
+     <include refid="Base_Column_List" />
+     from engine_sharding
+     <if test="_parameter != null">
+			<include refid="Vo_Where_Clause" />
+		</if>
+  </select>
+  
+</mapper>
