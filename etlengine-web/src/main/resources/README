@@ -1,0 +1,16 @@
+CREATE TABLE `engine_etls` (
+	`id` INT(11) NOT NULL AUTO_INCREMENT,
+	`type` VARCHAR(32) NOT NULL,
+	`level` INT(11) NOT NULL,
+	`title` VARCHAR(256) NOT NULL,
+	`description` LONGTEXT NOT NULL,
+	`template` LONGTEXT NOT NULL,
+	`added_at` DATETIME NOT NULL,
+	`modify_at` DATETIME NOT NULL,
+	PRIMARY KEY (`id`),
+	INDEX `type_idx` (`type`)
+)
+COLLATE='utf8_general_ci'
+ENGINE=MyISAM
+AUTO_INCREMENT=12
+;

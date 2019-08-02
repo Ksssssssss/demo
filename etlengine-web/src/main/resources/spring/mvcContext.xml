@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+	        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+	        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+	        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd
+	        http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.0.xsd
+	        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
+	        
+	<context:annotation-config />
+	<context:component-scan base-package="com.hoolai.bi.etlengine.web"></context:component-scan>
+	
+	<bean id="frontConfigHandlerInterceptor" class="com.hoolai.bi.etlengine.web.interceptor.FrontConfigHandlerInterceptor"></bean>
+	<!--
+	<bean id="jspToHtmlSpringMvcHandlerInterceptor" class="com.hoolai.jsptohtml.JspToHtmlSpringMvcHandlerInterceptor"></bean>
+	-->
+	<bean
+		class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping">
+		<property name="interceptors">
+			<!-- 多个拦截器,顺序执行 -->
+			<list>
+				<ref bean="frontConfigHandlerInterceptor" />
+				<!--
+				<ref bean="jspToHtmlSpringMvcHandlerInterceptor" />
+				-->
+			</list>
+		</property>
+	</bean>
+	<bean
+		class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+		<property name="messageConverters">
+			<util:list>
+				<ref bean="mappingJacksonHttpMessageConverter" />
+			</util:list>
+		</property>
+	</bean>
+
+	<bean id="mappingJacksonHttpMessageConverter"
+		class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter" />
+		
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="defaultEncoding" value="UTF-8" />
+		<property name="maxUploadSize" value="-1" />
+	</bean>
+		
+	<bean id="viewResolver" class="com.hoolai.bi.etlengine.web.resolver.JeeDevViewResolver">
+		<property name="order" value="0"/>
+        <property name="defaultViewResolver" ref="beanNameViewResolver"/>
+        <property name="viewResolverMap">
+            <map>
+                <entry>
+                    <key>
+                        <set>
+                            <value>.jsp</value>
+                        </set>
+                    </key>
+                    <ref bean="jspViewResolver"/>
+                </entry>
+                <entry>
+                    <key><value>.ftl</value></key>
+                    <ref bean="freeMarkerViewResolver"/>
+                </entry>
+                <!--
+                <entry>
+                    <key>
+                        <set>
+                            <value>.vm</value>
+                            <value>.htm</value>
+                        </set>
+                    </key>
+                    <ref bean="velocityViewResolver"/>
+                </entry>
+                -->
+            </map>
+        </property>
+    </bean>
+    
+    <bean id="beanNameViewResolver" class="org.springframework.web.servlet.view.BeanNameViewResolver">
+    		<property name="order" value="2"/>
+    </bean>
+    
+    <bean id="jspViewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+    	<property name="order" value="1"/>
+		<property name="viewClass">
+			<value>org.springframework.web.servlet.view.JstlView</value>
+		</property>
+		<property name="prefix" value="/WEB-INF/jsp/" />
+		<!--
+		<property name="suffix" value=".jsp"></property>
+		-->
+	</bean>
+	
+	<!--  FreeMarker ViewResolver Configuration -->
+    <bean id="freeMarkerViewResolver" class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">  
+    	<property name="order" value="1"/>     
+    	<!--
+        <property name="suffix" value=".ftl"/>
+        -->     
+        <property name="contentType" value="text/html;charset=utf-8"/>     
+        <property name="viewClass" value="com.hoolai.jsptohtml.ExtendFreeMarkerView"/>
+        <!--
+        <property name="viewClass" value="org.springframework.web.servlet.view.freemarker.FreeMarkerView"/>
+        -->     
+    </bean> 
+    
+    
+    <!-- FreeMarker ConfigurationConfiguration -->     
+    <bean id="freemarkerConfig"  class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">  
+       <property name="templateLoaderPath" value="/WEB-INF/jsp/"/>
+       <property name="freemarkerVariables">
+          <map>
+              <entry key="xml_escape" value-ref="fmXmlEscape"/>
+          </map>
+       </property>
+       <property name="freemarkerSettings">   
+            <props>       
+              <prop key="template_update_delay">1</prop>   
+              <prop key="default_encoding">UTF-8</prop>
+              <prop key="localized_lookup">false</prop>
+              <prop key="locale">zh_CN</prop>
+              <prop key="datetime_format">yyyy-MM-dd HH:mm:ss</prop>  
+              <prop key="time_format">HH:mm:ss</prop>  
+              <prop key="number_format">0.######</prop>  
+              <prop key="boolean_format">true,false</prop>  
+              <prop key="whitespace_stripping">true</prop>  
+              <prop key="tag_syntax">auto_detect</prop>  
+              <prop key="url_escaping_charset">UTF-8</prop>  
+            </props>       
+        </property>  
+    </bean>
+       
+    
+    <bean id="fmXmlEscape" class="freemarker.template.utility.XmlEscape"/>	
+    
+    <!--  Velocity ViewResolver Configuration 
+    <bean id="velocityViewResolver" class = "org.springframework.web.servlet.view.velocity.VelocityViewResolver">
+         <property name="order" value="0" />
+         <property name="contentType" value="text/html;charset=UTF-8" />
+         <property name="requestContextAttribute" value="req"/>
+    </bean>
+	-->
+    <!-- Velocity Configuration     
+    <bean id="velocityConfig" class = "org.springframework.web.servlet.view.velocity.VelocityConfigurer">
+         <property name="configLocation" value="/WEB-INF/velocity.properties"/>
+         <property name="resourceLoaderPath" value="/" />
+    </bean>
+    --> 
+	<bean id="exceptionResolver"
+		class="com.hoolai.bi.etlengine.web.resolver.PanelExceptionHandler">
+	</bean>
+	<!--
+	<bean id="exceptionResolver"
+		class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+		<property name="defaultErrorView" value="error/50x.jsp" />
+		<property name="exceptionMappings">
+			<props>
+				<prop key="java.lang.RuntimeException">showError</prop> 
+			</props>
+		</property>
+	</bean>
+	-->
+	<!-- 对静态资源文件的访问 方案一 （二选一） <mvc:default-servlet-handler/> -->
+	<!-- 对静态资源文件的访问 方案二 （二选一）
+	<mvc:resources mapping="/images/**" location="/static/images/" cache-period="31556926" />
+	<mvc:resources mapping="/js/**" location="/static/js/" cache-period="31556926" />
+	<mvc:resources mapping="/css/**" location="/static/css/" cache-period="31556926"/>
+	<mvc:resources mapping="/manage/**" location="/static/manage/" cache-period="31556926" />
+	<mvc:resources mapping="/dataTables/**" location="/static/dataTables/" cache-period="31556926" />
+	<mvc:resources mapping="/wap/**" location="/static/wap/" cache-period="31556926" />
+	
+	 <mvc:resources mapping="/robots.txt" location="/robots.txt" cache-period="10"/>
+	 <mvc:resources mapping="/favicon.ico" location="/static/images/icon/favicon_lp.ico" cache-period="10"/>
+	 
+	 <mvc:resources mapping="/static/**" location="/static/" cache-period="31556926" /
+	  -->
+</beans>
