@@ -1,0 +1,16 @@
+select snid as snid ,gameid as gameid ,ds as ds,
+userid as userid,
+first_date  as install_date ,
+last_date  as last_dau_time,
+total_pay_amount  as total_pay_amount,
+first_amount  as first_pay_amount ,
+first_paytime  as first_pay_time,
+last_paytime as last_pay_time,
+first_server ,
+last_server ,
+clientid ,
+roleid,
+role_name ,
+vip_level ,
+creative
+from facts.whale_user where ds='${statDay}' ${snGameIdsSql} 

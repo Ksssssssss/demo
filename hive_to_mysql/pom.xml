@@ -1,0 +1,85 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.hoolai.bi</groupId>
+		<artifactId>bi-parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<groupId>com.hoolai.bi</groupId>
+	<artifactId>hive_to_mysql</artifactId>
+	<version>2.3.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+	<name>hive_to_mysql</name>
+	<description>hive_to_mysql</description>
+
+	<properties>
+		<projectName>hive_to_mysql</projectName>
+		<common_tools.version>0.0.1-SNAPSHOT</common_tools.version>
+		<hive.version>0.7.1-cdh3u4</hive.version>
+	</properties>
+
+	<build>
+		<finalName>${projectName}</finalName>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<includes>
+					<include>${dir.name}/**</include>
+					<include>hive_mappers/**</include>
+					<include>*</include>
+				</includes>
+			</resource>
+		</resources>
+		<testResources>
+			<testResource>
+				<directory>src/test/resources</directory>
+				<includes>
+					<include>spring/appContext.xml</include>
+					<include>spring/**</include>
+					<include>*</include>
+				</includes>
+			</testResource>
+			<testResource>
+				<directory>src/test/resources</directory>
+				<filtering>true</filtering>
+				<includes>
+					<include>spring/appContext.xml</include>
+				</includes>
+			</testResource>
+		</testResources>
+	</build>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.hoolai.bi</groupId>
+			<artifactId>bi_panel_backend</artifactId>
+			<version>rc_2.6.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>com.hoolai.bi</groupId>
+			<artifactId>jsp-to-html</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.apache.hadoop.hive</groupId>
+		    <artifactId>hive-jdbc</artifactId>
+		    <version>${hive.version}</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.apache.hadoop.hive</groupId>
+		    <artifactId>hive-cli</artifactId>
+		    <version>${hive.version}</version>
+		</dependency>
+
+		<dependency>
+		    <groupId>com.hoolai.bi</groupId>
+		    <artifactId>common_test</artifactId>
+		    <version>0.0.1-SNAPSHOT</version>
+		    <scope>test</scope>
+		</dependency>
+
+	</dependencies>
+</project>

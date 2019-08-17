@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappers>
+	
+	<!--day etl begin -->
+	<mapper>
+		<type>etl-engine-run</type>
+		<name>daily_report</name>
+		<sqlTableName>daily_report</sqlTableName>
+		<hqlPath>hqls/daily_report.ftl</hqlPath>
+		<statType>day</statType>
+		<statIdentifyColumn>day</statIdentifyColumn>		
+	</mapper>
+	
+	<mapper>
+		<type>etl-engine-run</type>
+		<name>client_daily_report</name>
+		<sqlTableName>client_daily_report</sqlTableName>
+		<hqlPath>hqls/client_daily_report.ftl</hqlPath>
+		<statType>day</statType>
+		<statIdentifyColumn>day</statIdentifyColumn>		
+	</mapper>
+	
+	<mapper>
+		<type>etl-engine-run</type>
+		<name>source_daily_report</name>
+		<sqlTableName>source_daily_report</sqlTableName>
+		<hqlPath>hqls/source_daily_report.ftl</hqlPath>
+		<statType>day</statType>
+		<statIdentifyColumn>day</statIdentifyColumn>		
+	</mapper>
+	<mapper>
+		<type>etl-engine-run</type>
+		<name>user_retention_ltv</name>
+		<sqlTableName>user_retention_ltv</sqlTableName>
+		<hqlPath>hqls/user_retention_ltv.ftl</hqlPath>
+		<statType>day</statType>
+		<statIdentifyColumn>stat_day</statIdentifyColumn>		
+	</mapper>
+	
+	<mapper>
+		<type>etl-engine-run</type>
+		<name>user_retention_source_ltv</name>
+		<sqlTableName>user_retention_source_ltv</sqlTableName>
+		<hqlPath>hqls/user_retention_source_ltv.ftl</hqlPath>
+		<statType>day</statType>
+		<statIdentifyColumn>stat_day</statIdentifyColumn>		
+	</mapper>
+	
+	<mapper>
+		<type>etl-engine-run</type>
+		<name>user_retention_client_ltv</name>
+		<sqlTableName>user_retention_client_ltv</sqlTableName>
+		<hqlPath>hqls/user_retention_client_ltv.ftl</hqlPath>
+		<statType>day</statType>
+		<statIdentifyColumn>stat_day</statIdentifyColumn>		
+	</mapper>
+	
+	<mapper>
+		<type>etl-engine-run</type>
+		<name>dau_struct</name>
+		<sqlTableName>dau_struct</sqlTableName>
+		<hqlPath>hqls/dau_struct.ftl</hqlPath>
+		<statType>day</statType>
+		<statIdentifyColumn>stat_day</statIdentifyColumn>		
+	</mapper>
+	
+	<mapper>
+		<type>etl-engine-run</type>
+		<name>first_payment_level</name>
+		<sqlTableName>first_payment_level</sqlTableName>
+		<hqlPath>hqls/first_payment_level.ftl</hqlPath>	
+		<statType>day</statType>
+		<statIdentifyColumn>stat_day</statIdentifyColumn>	
+	</mapper>
+	
+	<mapper>
+		<type>etl-engine-run</type>
+		<name>total_payment_level</name>
+		<sqlTableName>total_payment_level</sqlTableName>
+		<hqlPath>hqls/total_payment_level.ftl</hqlPath>	
+		<statType>day</statType>
+		<statIdentifyColumn>stat_day</statIdentifyColumn>	
+	</mapper>
+	
+	<mapper>
+		<type>etl-engine-run</type>
+		<name>month_report</name>
+		<sqlTableName>month_report</sqlTableName>
+		<hqlPath>hqls/month_report.ftl</hqlPath>
+		<statType>month</statType>
+		<statIdentifyColumn>month</statIdentifyColumn>		
+	</mapper>
+	
+	
+	<mapper>
+		<type>etl-engine-run</type>
+		<name>week_report</name>
+		<sqlTableName>week_report</sqlTableName>
+		<hqlPath>hqls/week_report.ftl</hqlPath>	
+		<statType>week</statType>
+		<statIdentifyColumn>week</statIdentifyColumn>	
+	</mapper>
+	
+	<mapper>
+		<type>etl-engine-run</type>
+		<name>paylevel_amount_cnt_source</name>
+		<sqlTableName>paylevel_amount_cnt_source</sqlTableName>
+		<hqlPath>hqls/paylevel_amount_cnt_source.ftl</hqlPath>	
+		<statType>day</statType>
+		<statIdentifyColumn>stat_day</statIdentifyColumn>		
+	</mapper>
+	
+	<mapper>
+		<type>etl-engine-run</type>
+		<name>paylevel_amount_cnt_client</name>
+		<sqlTableName>paylevel_amount_cnt_client</sqlTableName>
+		<hqlPath>hqls/paylevel_amount_cnt_client.ftl</hqlPath>	
+		<statType>day</statType>
+		<statIdentifyColumn>stat_day</statIdentifyColumn>		
+	</mapper>
+	
+	<mapper>
+		<type>etl-engine-run</type>
+		<name>paylevel_amount_cnt</name>
+		<sqlTableName>paylevel_amount_cnt</sqlTableName>
+		<hqlPath>hqls/paylevel_amount_cnt.ftl</hqlPath>	
+		<statType>day</statType>
+		<statIdentifyColumn>stat_day</statIdentifyColumn>		
+	</mapper>
+	
+	<mapper>
+		<type>etl-engine-run</type>
+		<name>economy_expend_noclient</name>
+		<sqlTableName>economy_new_report</sqlTableName>
+		<hqlPath>hqls/economy_report.ftl</hqlPath>	
+		<statType>day</statType>
+		<statIdentifyColumn>ds</statIdentifyColumn>		
+	</mapper>
+	
+	<mapper>
+		<type>etl-engine-run</type>
+		<name>economy_expend</name>
+		<sqlTableName>client_economy_new_report</sqlTableName>
+		<hqlPath>hqls/client_economy_report.ftl</hqlPath>	
+		<statType>day</statType>
+		<statIdentifyColumn>ds</statIdentifyColumn>		
+	</mapper>
+	
+	<mapper>
+		<type>etl-engine-run</type>
+		<name>client_level_new_payment</name>
+		<sqlTableName>client_level_new_payment</sqlTableName>
+		<hqlPath>hqls/client_level_new_payment.ftl</hqlPath>	
+		<statType>day</statType>
+		<statIdentifyColumn>ds</statIdentifyColumn>		
+	</mapper>
+	
+	<mapper>
+		<type>etl-engine-run</type>
+		<name>level_dau</name>
+		<sqlTableName>level_dau</sqlTableName>
+		<hqlPath>hqls/level_dau.ftl</hqlPath>	
+		<statType>day</statType>
+		<statIdentifyColumn>ds</statIdentifyColumn>		
+	</mapper>
+	
+	<mapper>
+		<type>etl-engine-run</type>
+		<name>level_install_payer</name>
+		<sqlTableName>level_install_payer</sqlTableName>
+		<hqlPath>hqls/level_install_payer.ftl</hqlPath>	
+		<statType>day</statType>
+		<statIdentifyColumn>ds</statIdentifyColumn>		
+	</mapper>
+	
+	<mapper>
+		<type>etl-engine-run</type>
+		<name>level_new_payment</name>
+		<sqlTableName>level_new_payment</sqlTableName>
+		<hqlPath>hqls/level_new_payment.ftl</hqlPath>	
+		<statType>day</statType>
+		<statIdentifyColumn>ds</statIdentifyColumn>		
+	</mapper>
+	
+	<!-- 大R数据同步  by jqm 2015-12-15 13:50:52 -->
+	<mapper>
+		<type>etl-engine-run</type>
+		<name>whale_user</name>
+		<sqlTableName>whale_user</sqlTableName>
+		<hqlPath>hqls/whale_user.ftl</hqlPath>	
+		<statType>day</statType>
+		<statIdentifyColumn>ds</statIdentifyColumn>		
+	</mapper>
+	
+	<mapper>
+		<type>etl-engine-run</type>
+		<name>payuser_retention_ltv</name>
+		<sqlTableName>payuser_retention_ltv</sqlTableName>
+		<hqlPath>hqls/payuser_retention_ltv.ftl</hqlPath>	
+		<statType>day</statType>
+		<statIdentifyColumn>ds</statIdentifyColumn>		
+	</mapper>
+	
+	<!--day etl end -->
+	
+	<!--hour etl begin-->
+	<mapper>
+		<type>quasi-etl-engine-run</type>
+		<name>hour_daily_report</name>
+		<sqlTableName>hour_daily_report</sqlTableName>
+		<hqlPath>hqls/hour_daily_report.ftl</hqlPath>	
+		<statType>hour</statType>
+		<statIdentifyColumn>hour</statIdentifyColumn>		
+	</mapper>
+	<!--
+	<mapper>
+		<type>quasi-etl-engine-run</type>
+		<name>hour_client_daily_report</name>
+		<sqlTableName>hour_client_daily_report</sqlTableName>
+		<hqlPath>hqls/hour_client_daily_report.ftl</hqlPath>	
+		<statType>day</statType>
+		<statIdentifyColumn>day</statIdentifyColumn>		
+	</mapper>
+	-->
+	<mapper>
+		<type>quasi-etl-engine-run</type>
+		<name>hour_source_daily_report</name>
+		<sqlTableName>hour_source_daily_report</sqlTableName>
+		<hqlPath>hqls/hour_source_daily_report.ftl</hqlPath>	
+		<statType>hour</statType>
+		<statIdentifyColumn>hour</statIdentifyColumn>		
+	</mapper>
+	<!--hour etl end-->
+	
+	<!--adtracking hour etl begin-->
+	<mapper>
+		<type>adtracking_quasi_etl_engine_run</type>
+		<name>hour_realtime_source_report</name>
+		<sqlTableName>hour_realtime_source_report</sqlTableName>
+		<hqlPath>hqls/hour_realtime_source_report.ftl</hqlPath>	
+		<statType>day</statType>
+		<statIdentifyColumn>ds</statIdentifyColumn>		
+	</mapper>
+	<!--adtracking hour etl end-->
+	
+	<!-- 手机模型 begin-->
+	<mapper>
+		<type>etl-engine-run</type>
+		<name>equip_day</name>
+		<sqlTableName>equip_day</sqlTableName>
+		<hqlPath>hqls/equip_day.ftl</hqlPath>	
+		<statType>day</statType>
+		<statIdentifyColumn>ds</statIdentifyColumn>		
+	</mapper>
+	
+	<mapper>
+		<type>etl-engine-run</type>
+		<name>equip_retention_ltv</name>
+		<sqlTableName>equip_retention_ltv</sqlTableName>
+		<hqlPath>hqls/equip_retention_ltv.ftl</hqlPath>	
+		<statType>day</statType>
+		<statIdentifyColumn>ds</statIdentifyColumn>		
+	</mapper>
+	
+	
+	<mapper>
+		<type>etl-engine-run</type>
+		<name>equip_model_day</name>
+		<sqlTableName>equip_model_day</sqlTableName>
+		<hqlPath>hqls/equip_model_day.ftl</hqlPath>	
+		<statType>day</statType>
+		<statIdentifyColumn>ds</statIdentifyColumn>		
+	</mapper>
+	
+	<mapper>
+		<type>etl-engine-run</type>
+		<name>equip_source_day</name>
+		<sqlTableName>equip_source_day</sqlTableName>
+		<hqlPath>hqls/equip_source_day.ftl</hqlPath>	
+		<statType>day</statType>
+		<statIdentifyColumn>ds</statIdentifyColumn>		
+	</mapper>
+	
+	<mapper>
+		<type>etl-engine-run</type>
+		<name>equip_source_retention_ltv</name>
+		<sqlTableName>equip_source_retention_ltv</sqlTableName>
+		<hqlPath>hqls/equip_source_retention_ltv.ftl</hqlPath>	
+		<statType>day</statType>
+		<statIdentifyColumn>ds</statIdentifyColumn>		
+	</mapper>
+	
+	<mapper>
+		<type>etl-engine-run</type>
+		<name>equip_model_retention_ltv</name>
+		<sqlTableName>equip_model_retention_ltv</sqlTableName>
+		<hqlPath>hqls/equip_model_retention_ltv.ftl</hqlPath>	
+		<statType>day</statType>
+		<statIdentifyColumn>ds</statIdentifyColumn>		
+	</mapper>
+	
+	<mapper>
+		<type>etl-engine-run</type>
+		<name>equip_version_dau</name>
+		<sqlTableName>equip_version_dau</sqlTableName>
+		<hqlPath>hqls/equip_version_dau.ftl</hqlPath>	
+		<statType>day</statType>
+		<statIdentifyColumn>ds</statIdentifyColumn>		
+	</mapper>
+	<!-- 手机模型 end-->
+	
+	
+	
+	
+</mappers>
