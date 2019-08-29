@@ -1,4 +1,3 @@
-
 select a.snid,a.gameid,clientid,round(payment_amount,2) as payment_amount,
 dau,install,dnu,round(arpu,2) as arpu,
 round(arppu,2) as arppu,

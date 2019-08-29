@@ -90,10 +90,7 @@ public class SyncAllReportDatas {
 			List<Mapper> mapperList=convertMapperDatas.getTypeMapperList(Type.ETL_ENGINE_RUN.getDisplayName());
 			try {
 				SyncConditions syncConditions=this.blockingQueue.take();
-				 boolean issucc=this.sync(syncConditions,mapperList);
-				 if(issucc){
-					 this.syncGamesInfoProcesser.sync(syncConditions);
-				 }
+				this.sync(syncConditions,mapperList);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
@@ -176,7 +173,6 @@ public class SyncAllReportDatas {
 		
 			int futureSize=mappers.size();
 			do{
-				// 姣忕閽熸娴嬩竴娆�
 				TimeUnit.MILLISECONDS.sleep(3000);
 				Set<Mapper> keyMappers=new HashSet<ConvertMapperDatas.Mapper>();
 				keyMappers.addAll(resMapper.keySet());
@@ -304,8 +300,8 @@ public class SyncAllReportDatas {
 		}
 	}
 	
-	
-	
+
+
 	private static class HiveParameterizedRowMapper extends AbstractHiveParameterizedRowMapper{
 		
 		private final Mapper mapper;
