@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.hoolai.bi:bi_panel_backend:rc_2.6.1-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/hoolai/bi/bi_panel_backend/rc_2.6.1-SNAPSHOT/bi_panel_backend-rc_2.6.1-20151201.021510-2.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/hoolai/bi/bi_panel_backend/rc_2.6.1-SNAPSHOT/bi_panel_backend-rc_2.6.1-20151201.021510-2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/hoolai/bi/bi_panel_backend/rc_2.6.1-SNAPSHOT/bi_panel_backend-rc_2.6.1-20151201.021510-2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

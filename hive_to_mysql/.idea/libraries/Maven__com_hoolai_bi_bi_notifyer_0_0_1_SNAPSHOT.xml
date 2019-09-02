@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.hoolai.bi:bi_notifyer:0.0.1-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/hoolai/bi/bi_notifyer/0.0.1-SNAPSHOT/bi_notifyer-0.0.1-20160422.104936-12.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/hoolai/bi/bi_notifyer/0.0.1-SNAPSHOT/bi_notifyer-0.0.1-20160422.104936-12-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/hoolai/bi/bi_notifyer/0.0.1-SNAPSHOT/bi_notifyer-0.0.1-20160422.104936-12-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.hoolai:common-dao:2.0.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/hoolai/common-dao/2.0.0-SNAPSHOT/common-dao-2.0.0-20141225.112734-4.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/hoolai/common-dao/2.0.0-SNAPSHOT/common-dao-2.0.0-20141225.112734-4-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/hoolai/common-dao/2.0.0-SNAPSHOT/common-dao-2.0.0-20141225.112734-4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

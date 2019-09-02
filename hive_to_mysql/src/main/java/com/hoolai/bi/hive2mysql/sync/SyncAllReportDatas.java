@@ -120,7 +120,7 @@ public class SyncAllReportDatas {
 			List<Mapper> mapperList=convertMapperDatas.getTypeMapperList(Type.QUASI_ETL_ENGINE_RUN.getDisplayName());
 			try {
 				SyncConditions syncConditions=this.quasiBlockingQueue.take();
-				 boolean issucc=this.sync(syncConditions,mapperList);
+				 this.sync(syncConditions,mapperList);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
@@ -150,7 +150,7 @@ public class SyncAllReportDatas {
 			List<Mapper> mapperList=convertMapperDatas.getTypeMapperList(Type.ADTRACKING_QUASI_ETL_ENGINE_RUN.getDisplayName());
 			try {
 				SyncConditions syncConditions=this.adTrackingQuasiBlockingQueue.take();
-				 boolean issucc=this.sync(syncConditions,mapperList);
+				 this.sync(syncConditions,mapperList);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}

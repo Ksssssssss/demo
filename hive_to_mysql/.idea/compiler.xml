@@ -9,5 +9,8 @@
         <module name="hive_to_mysql" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="hive_to_mysql" target="1.6" />
+    </bytecodeTargetLevel>
   </component>
 </project>

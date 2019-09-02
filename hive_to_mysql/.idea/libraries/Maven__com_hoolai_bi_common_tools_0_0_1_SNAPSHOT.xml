@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.hoolai.bi:common_tools:0.0.1-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/hoolai/bi/common_tools/0.0.1-SNAPSHOT/common_tools-0.0.1-20150409.131710-2.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/hoolai/bi/common_tools/0.0.1-SNAPSHOT/common_tools-0.0.1-20150409.131710-2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/hoolai/bi/common_tools/0.0.1-SNAPSHOT/common_tools-0.0.1-20150409.131710-2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

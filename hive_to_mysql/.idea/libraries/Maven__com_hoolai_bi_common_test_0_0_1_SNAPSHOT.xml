@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.hoolai.bi:common_test:0.0.1-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/hoolai/bi/common_test/0.0.1-SNAPSHOT/common_test-0.0.1-20141225.112758-1.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/hoolai/bi/common_test/0.0.1-SNAPSHOT/common_test-0.0.1-20141225.112758-1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/hoolai/bi/common_test/0.0.1-SNAPSHOT/common_test-0.0.1-20141225.112758-1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
