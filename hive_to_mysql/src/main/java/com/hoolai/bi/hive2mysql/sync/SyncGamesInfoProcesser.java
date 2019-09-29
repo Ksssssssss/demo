@@ -12,45 +12,45 @@ import com.hoolai.bi.report.service.MonthReportService;
 
 @Component
 public class SyncGamesInfoProcesser {
-	
-	private static final Logger logger=Logger.getLogger("syncdatas");
-	
-	@Autowired
-	private MonthReportService monthReportService;
-	
-	@Autowired
-	private GamesService gamesService;
-	
-	public void sync(SyncConditions syncConditions){
-		if(syncConditions==null || syncConditions.getGameBiIds()==null){
-			return ;
-		}
-		for (GameBiId gameBiId : syncConditions.getGameBiIds()) {
-			this.syncGameInfo(gameBiId,syncConditions);
-		}
-	}
-	
-	private void syncGameInfo(GameBiId gameBiId,SyncConditions syncConditions){
-		
-		try {
-			MonthReport monthReport=this.monthReportService.get(gameBiId.getSnid(), gameBiId.getGameid(), syncConditions.getStatMonth());
-			
-			Games games=this.gamesService.getGames(new Long(gameBiId.getSnid()), new Long(gameBiId.getGameid()));
-			
-			if(games==null){
-				return ;
-			}
-			Games updateGames=new Games();
-			updateGames.setId(games.getId());
-			
-			updateGames.setInstall(monthReport.getInstall());
-			updateGames.setPu(new Long(monthReport.getPu()));
-			updateGames.setPayAmount(monthReport.getPaymentAmount());
-			
-			this.gamesService.modifyEntitySelective(updateGames);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
+
+    private static final Logger logger = Logger.getLogger("syncdatas");
+
+    @Autowired
+    private MonthReportService monthReportService;
+
+    @Autowired
+    private GamesService gamesService;
+
+    public void sync(SyncConditions syncConditions) {
+        if (syncConditions == null || syncConditions.getGameBiIds() == null) {
+            return;
+        }
+        for (GameBiId gameBiId : syncConditions.getGameBiIds()) {
+            this.syncGameInfo(gameBiId, syncConditions);
+        }
+    }
+
+    private void syncGameInfo(GameBiId gameBiId, SyncConditions syncConditions) {
+
+        try {
+            MonthReport monthReport = this.monthReportService.get(gameBiId.getSnid(), gameBiId.getGameid(), syncConditions.getStatMonth());
+
+            Games games = this.gamesService.getGames(new Long(gameBiId.getSnid()), new Long(gameBiId.getGameid()));
+
+            if (games == null) {
+                return;
+            }
+            Games updateGames = new Games();
+            updateGames.setId(games.getId());
+
+            updateGames.setInstall(monthReport.getInstall());
+            updateGames.setPu(new Long(monthReport.getPu()));
+            updateGames.setPayAmount(monthReport.getPaymentAmount());
+
+            this.gamesService.modifyEntitySelective(updateGames);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
 }

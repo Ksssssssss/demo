@@ -55,7 +55,19 @@
 			<groupId>com.hoolai.bi</groupId>
 			<artifactId>bi_panel_backend</artifactId>
 			<version>rc_2.6.1-SNAPSHOT</version>
+			<!--<exclusions>-->
+				<!--<exclusion>-->
+					<!--<groupId>org.apache.kafka</groupId>-->
+					<!--<artifactId>kafka_2.10</artifactId>-->
+				<!--</exclusion>-->
+			<!--</exclusions>-->
 		</dependency>
+
+		<!--<dependency>-->
+			<!--<groupId>org.apache.kafka</groupId>-->
+			<!--<artifactId>kafka_2.11</artifactId>-->
+			<!--<version>2.2.1</version>-->
+		<!--</dependency>-->
 		<dependency>
 			<groupId>com.hoolai.bi</groupId>
 			<artifactId>jsp-to-html</artifactId>

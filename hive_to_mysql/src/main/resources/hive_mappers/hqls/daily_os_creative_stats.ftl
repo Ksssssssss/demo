@@ -1,6 +1,6 @@
 select snid,gameid    ,
 os,
-clientid,
+creative,
 pay_amount,
 pay_count    ,
 pay_times   ,
@@ -13,4 +13,4 @@ new_pay_times   ,
 dau_num    ,
 install_num    ,
 ds
-from etl_dailyreport.daily_os_client_stats_device where ds='${statDay}' ${snGameIdsSql}
+from etl_dailyreport.daily_os_creative_stats where ds='${statDay}' ${snGameIdsSql}
