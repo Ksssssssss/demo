@@ -147,33 +147,33 @@
 
     <mapper>
         <type>etl-engine-run</type>
-        <name>registered_income_ratio</name>
-        <sqlTableName>registered_income_ratio</sqlTableName>
-        <hqlPath>hqls/registered_income_ratio.ftl</hqlPath>
+        <name>install_income_ratio</name>
+        <sqlTableName>install_income_ratio</sqlTableName>
+        <hqlPath>hqls/install_income_ratio.ftl</hqlPath>
         <statType>day</statType>
         <statIdentifyColumn>ds</statIdentifyColumn>
     </mapper>
     <mapper>
         <type>etl-engine-run</type>
-        <name>registered_income_ratio_os</name>
-        <sqlTableName>registered_income_ratio_os</sqlTableName>
-        <hqlPath>hqls/registered_income_ratio_os.ftl</hqlPath>
+        <name>install_income_ratio_os</name>
+        <sqlTableName>install_income_ratio_os</sqlTableName>
+        <hqlPath>hqls/install_income_ratio_os.ftl</hqlPath>
         <statType>day</statType>
         <statIdentifyColumn>ds</statIdentifyColumn>
     </mapper>
     <mapper>
         <type>etl-engine-run</type>
-        <name>registered_income_ratio_os_client</name>
-        <sqlTableName>registered_income_ratio_os_client</sqlTableName>
-        <hqlPath>hqls/registered_income_ratio_os_client.ftl</hqlPath>
+        <name>install_income_ratio_os_client</name>
+        <sqlTableName>install_income_ratio_os_client</sqlTableName>
+        <hqlPath>hqls/install_income_ratio_os_client.ftl</hqlPath>
         <statType>day</statType>
         <statIdentifyColumn>ds</statIdentifyColumn>
     </mapper>
     <mapper>
         <type>etl-engine-run</type>
-        <name>registered_income_ratio_os_creative</name>
-        <sqlTableName>registered_income_ratio_os_creative</sqlTableName>
-        <hqlPath>hqls/registered_income_ratio_os_creative.ftl</hqlPath>
+        <name>install_income_ratio_os_creative</name>
+        <sqlTableName>install_income_ratio_os_creative</sqlTableName>
+        <hqlPath>hqls/install_income_ratio_os_creative.ftl</hqlPath>
         <statType>day</statType>
         <statIdentifyColumn>ds</statIdentifyColumn>
     </mapper>
@@ -318,6 +318,200 @@
         <name>pay_retention_os_client_device</name>
         <sqlTableName>pay_retention_os_client_device</sqlTableName>
         <hqlPath>hqls/pay_retention_os_client_device.ftl</hqlPath>
+        <statType>day</statType>
+        <statIdentifyColumn>ds</statIdentifyColumn>
+    </mapper>
+    <mapper>
+        <type>etl-engine-run</type>
+        <name>economy</name>
+        <sqlTableName>economy</sqlTableName>
+        <hqlPath>hqls/economy.ftl</hqlPath>
+        <statType>day</statType>
+        <statIdentifyColumn>ds</statIdentifyColumn>
+    </mapper>
+    <mapper>
+        <type>etl-engine-run</type>
+        <name>level_distributions</name>
+        <sqlTableName>level_distributions</sqlTableName>
+        <hqlPath>hqls/level_distributions.ftl</hqlPath>
+        <statType>day</statType>
+        <statIdentifyColumn>ds</statIdentifyColumn>
+    </mapper>
+    <mapper>
+        <type>etl-engine-run</type>
+        <name>level_distributions_os</name>
+        <sqlTableName>level_distributions_os</sqlTableName>
+        <hqlPath>hqls/level_distributions_os.ftl</hqlPath>
+        <statType>day</statType>
+        <statIdentifyColumn>ds</statIdentifyColumn>
+    </mapper>
+    <mapper>
+        <type>etl-engine-run</type>
+        <name>level_change_trend</name>
+        <sqlTableName>level_change_trend</sqlTableName>
+        <hqlPath>hqls/level_change_trend.ftl</hqlPath>
+        <statType>day</statType>
+        <statIdentifyColumn>ds</statIdentifyColumn>
+    </mapper>
+
+    <mapper>
+        <type>etl-engine-run</type>
+        <name>payment_behavior</name>
+        <sqlTableName>payment_behavior</sqlTableName>
+        <hqlPath>hqls/pay_behavior.ftl</hqlPath>
+        <statType>day</statType>
+        <statIdentifyColumn>ds</statIdentifyColumn>
+    </mapper>
+
+    <mapper>
+        <type>etl-engine-run</type>
+        <name>retention_client</name>
+        <sqlTableName>retention_client</sqlTableName>
+        <hqlPath>hqls/retention_client.ftl</hqlPath>
+        <statType>day</statType>
+        <statIdentifyColumn>ds</statIdentifyColumn>
+    </mapper>
+
+    <mapper>
+        <type>etl-engine-run</type>
+        <name>retention_client_device</name>
+        <sqlTableName>retention_client_device</sqlTableName>
+        <hqlPath>hqls/retention_client_device.ftl</hqlPath>
+        <statType>day</statType>
+        <statIdentifyColumn>ds</statIdentifyColumn>
+    </mapper>
+
+    <mapper>
+        <type>etl-engine-run</type>
+        <name>retention_creative_device</name>
+        <sqlTableName>retention_creative_device</sqlTableName>
+        <hqlPath>hqls/retention_creative_device.ftl</hqlPath>
+        <statType>day</statType>
+        <statIdentifyColumn>ds</statIdentifyColumn>
+    </mapper>
+
+    <mapper>
+        <type>etl-engine-run</type>
+        <name>retention_creative</name>
+        <sqlTableName>retention_creative</sqlTableName>
+        <hqlPath>hqls/retention_creative.ftl</hqlPath>
+        <statType>day</statType>
+        <statIdentifyColumn>ds</statIdentifyColumn>
+    </mapper>
+
+    <mapper>
+        <type>etl-engine-run</type>
+        <name>daily_client_stats</name>
+        <sqlTableName>daily_client_stats</sqlTableName>
+        <hqlPath>hqls/daily_client_stats.ftl</hqlPath>
+        <statType>day</statType>
+        <statIdentifyColumn>ds</statIdentifyColumn>
+    </mapper>
+
+    <mapper>
+        <type>etl-engine-run</type>
+        <name>daily_client_stats_device</name>
+        <sqlTableName>daily_client_stats_device</sqlTableName>
+        <hqlPath>hqls/daily_client_stats_device.ftl</hqlPath>
+        <statType>day</statType>
+        <statIdentifyColumn>ds</statIdentifyColumn>
+    </mapper>
+
+    <mapper>
+        <type>etl-engine-run</type>
+        <name>daily_creative_stats</name>
+        <sqlTableName>daily_creative_stats</sqlTableName>
+        <hqlPath>hqls/daily_creative_stats.ftl</hqlPath>
+        <statType>day</statType>
+        <statIdentifyColumn>ds</statIdentifyColumn>
+    </mapper>
+
+    <mapper>
+        <type>etl-engine-run</type>
+        <name>daily_creative_stats_device</name>
+        <sqlTableName>daily_creative_stats_device</sqlTableName>
+        <hqlPath>hqls/daily_creative_stats_device.ftl</hqlPath>
+        <statType>day</statType>
+        <statIdentifyColumn>ds</statIdentifyColumn>
+    </mapper>
+
+    <mapper>
+        <type>etl-engine-run</type>
+        <name>pay_retention_client</name>
+        <sqlTableName>pay_retention_client</sqlTableName>
+        <hqlPath>hqls/pay_retention_client.ftl</hqlPath>
+        <statType>day</statType>
+        <statIdentifyColumn>ds</statIdentifyColumn>
+    </mapper>
+
+    <mapper>
+        <type>etl-engine-run</type>
+        <name>pay_retention_client_device</name>
+        <sqlTableName>pay_retention_client_device</sqlTableName>
+        <hqlPath>hqls/pay_retention_client_device.ftl</hqlPath>
+        <statType>day</statType>
+        <statIdentifyColumn>ds</statIdentifyColumn>
+    </mapper>
+
+    <mapper>
+        <type>etl-engine-run</type>
+        <name>pay_retention_creative_device</name>
+        <sqlTableName>pay_retention_creative_device</sqlTableName>
+        <hqlPath>hqls/pay_retention_creative_device.ftl</hqlPath>
+        <statType>day</statType>
+        <statIdentifyColumn>ds</statIdentifyColumn>
+    </mapper>
+
+    <mapper>
+        <type>etl-engine-run</type>
+        <name>pay_retention_creative</name>
+        <sqlTableName>pay_retention_creative</sqlTableName>
+        <hqlPath>hqls/pay_retention_creative.ftl</hqlPath>
+        <statType>day</statType>
+        <statIdentifyColumn>ds</statIdentifyColumn>
+    </mapper>
+
+    <mapper>
+        <type>etl-engine-run</type>
+        <name>pay_install_retention_client</name>
+        <sqlTableName>pay_install_retention_client</sqlTableName>
+        <hqlPath>hqls/pay_install_retention_client.ftl</hqlPath>
+        <statType>day</statType>
+        <statIdentifyColumn>ds</statIdentifyColumn>
+    </mapper>
+
+    <mapper>
+        <type>etl-engine-run</type>
+        <name>pay_install_retention_client_device</name>
+        <sqlTableName>pay_install_retention_client_device</sqlTableName>
+        <hqlPath>hqls/pay_install_retention_client_device.ftl</hqlPath>
+        <statType>day</statType>
+        <statIdentifyColumn>ds</statIdentifyColumn>
+    </mapper>
+
+    <mapper>
+        <type>etl-engine-run</type>
+        <name>pay_install_retention_creative_device</name>
+        <sqlTableName>pay_install_retention_creative_device</sqlTableName>
+        <hqlPath>hqls/pay_install_retention_creative_device.ftl</hqlPath>
+        <statType>day</statType>
+        <statIdentifyColumn>ds</statIdentifyColumn>
+    </mapper>
+
+    <mapper>
+        <type>etl-engine-run</type>
+        <name>pay_install_retention_creative</name>
+        <sqlTableName>pay_install_retention_creative</sqlTableName>
+        <hqlPath>hqls/pay_install_retention_creative.ftl</hqlPath>
+        <statType>day</statType>
+        <statIdentifyColumn>ds</statIdentifyColumn>
+    </mapper>
+
+    <mapper>
+        <type>etl-engine-run</type>
+        <name>visit_trending</name>
+        <sqlTableName>visit_trending</sqlTableName>
+        <hqlPath>hqls/visit_trending.ftl</hqlPath>
         <statType>day</statType>
         <statIdentifyColumn>ds</statIdentifyColumn>
     </mapper>

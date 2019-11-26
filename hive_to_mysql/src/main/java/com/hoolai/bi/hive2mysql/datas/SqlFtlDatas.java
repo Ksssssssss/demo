@@ -2,6 +2,7 @@ package com.hoolai.bi.hive2mysql.datas;
 
 import java.io.IOException;
 import java.io.StringWriter;
+import java.util.concurrent.locks.Lock;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -18,7 +19,7 @@ public class SqlFtlDatas {
 	@Autowired
 	@Qualifier("freemarkerConfiguration")
 	private Configuration freemarkerConfiguration;
-	
+
 	public synchronized Template getTemplate(String filePath){
 		try {
 			return this.freemarkerConfiguration.getTemplate(filePath);

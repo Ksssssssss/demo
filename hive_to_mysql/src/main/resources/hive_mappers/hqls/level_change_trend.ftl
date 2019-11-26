@@ -1,0 +1,1 @@
+SELECT gameid,snid,ds,install_ds,level,numbers from etl_dailyreport.level_change_trend where ds='${statDay}' ${snGameIdsSql}
