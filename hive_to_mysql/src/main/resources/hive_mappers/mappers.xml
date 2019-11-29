@@ -516,4 +516,22 @@
         <statIdentifyColumn>ds</statIdentifyColumn>
     </mapper>
 
+    <mapper>
+        <type>etl-engine-run</type>
+        <name>device_distributions</name>
+        <sqlTableName>device_distributions</sqlTableName>
+        <hqlPath>hqls/device_distributions.ftl</hqlPath>
+        <statType>day</statType>
+        <statIdentifyColumn>ds</statIdentifyColumn>
+    </mapper>
+
+    <mapper>
+        <type>etl-engine-run</type>
+        <name>online_duration_distributions</name>
+        <sqlTableName>online_duration_distributions</sqlTableName>
+        <hqlPath>hqls/online_duration_distributions.ftl</hqlPath>
+        <statType>day</statType>
+        <statIdentifyColumn>ds</statIdentifyColumn>
+    </mapper>
+
 </mappers>
