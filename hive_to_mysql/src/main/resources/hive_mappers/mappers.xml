@@ -534,4 +534,22 @@
         <statIdentifyColumn>ds</statIdentifyColumn>
     </mapper>
 
+    <mapper>
+        <type>etl-engine-run</type>
+        <name>ad_tracking</name>
+        <sqlTableName>ad_tracking</sqlTableName>
+        <hqlPath>hqls/ad_tracking.ftl</hqlPath>
+        <statType>day</statType>
+        <statIdentifyColumn>ds</statIdentifyColumn>
+    </mapper>
+
+    <mapper>
+        <type>etl-engine-run</type>
+        <name>ad_tracking_creative</name>
+        <sqlTableName>ad_tracking_creative</sqlTableName>
+        <hqlPath>hqls/ad_tracking_creative.ftl</hqlPath>
+        <statType>day</statType>
+        <statIdentifyColumn>ds</statIdentifyColumn>
+    </mapper>
+
 </mappers>
