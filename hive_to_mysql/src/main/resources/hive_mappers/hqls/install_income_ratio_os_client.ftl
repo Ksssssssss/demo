@@ -1,6 +1,10 @@
 select snid,gameid,
 ds,
-os,
+CASE
+WHEN lower(os)='android' THEN 'android'
+WHEN lower(os)='ios' THEN 'iOS'
+ELSE os
+END AS os,
 clientid,
 install_ds,
 income

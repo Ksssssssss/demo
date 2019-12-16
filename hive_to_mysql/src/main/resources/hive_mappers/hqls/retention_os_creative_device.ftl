@@ -1,5 +1,9 @@
 select snid,gameid	,
-os,
+CASE
+WHEN lower(os)='android' THEN 'android'
+WHEN lower(os)='ios' THEN 'iOS'
+ELSE os
+END AS os,
 creative,
 ds,
 dr,

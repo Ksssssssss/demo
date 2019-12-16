@@ -4,6 +4,6 @@ SELECT snid,
         ifa,
         creative,
          numbers,
-frequency
-FROM rawdatas.adtracking_creative
+        frequency
+FROM etl_dailyreport.ad_tracking_creative
 where ds='${statDay}' ${snGameIdsSql}
