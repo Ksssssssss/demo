@@ -13,7 +13,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<projectName>etlengine</projectName>
-		<spring.version>3.2.10.RELEASE</spring.version>
+		<spring.version>5.3.18</spring.version>
 		<common_tools.version>0.0.1-SNAPSHOT</common_tools.version>
 		<lucene.version>3.5.0</lucene.version>
 		<hive.version>0.7.1-cdh3u4</hive.version>
